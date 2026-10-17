@@ -20,13 +20,9 @@ let package = Package(
             dependencies: [
                 .product(name: "FlutterFramework", package: "FlutterFramework"),
             ],
+            // Tools version 5.9 builds in Swift 5 language mode, so no Swift 6 strict concurrency.
             resources: [
                 .process("PrivacyInfo.xcprivacy"),
-            ],
-            swiftSettings: [
-                // Xcode 16 defaults to Swift 6 strict concurrency; keep Swift 5 mode
-                // for the existing completion-handler and DispatchSemaphore code.
-                .swiftLanguageVersion(.v5),
             ]
         ),
     ]
