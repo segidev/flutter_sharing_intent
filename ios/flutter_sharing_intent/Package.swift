@@ -11,15 +11,9 @@ let package = Package(
     products: [
         .library(name: "flutter-sharing-intent", targets: ["flutter_sharing_intent"]),
     ],
-    dependencies: [
-        .package(name: "FlutterFramework", path: "../FlutterFramework"),
-    ],
     targets: [
         .target(
             name: "flutter_sharing_intent",
-            dependencies: [
-                .product(name: "FlutterFramework", package: "FlutterFramework"),
-            ],
             // Tools version 5.9 builds in Swift 5 language mode, so no Swift 6 strict concurrency.
             resources: [
                 .process("PrivacyInfo.xcprivacy"),
